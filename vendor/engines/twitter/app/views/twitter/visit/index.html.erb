@@ -1,0 +1,47 @@
+<body style="background-color:black">
+<div style="position: absolute; top: 30px; left: 50px; width: 140px; height: 50px; background-color: azure; padding-left: 30px; padding:20px;">
+	<h2><%= link_to 'Twitter', :controller => "welcome",:action => "index" %><h2>
+</div>
+<div style="position: absolute; top: 30px; left: 500px; width: 240px; height: 50px; background-color: azure; padding: 30px;">
+	<h2><%= @u %><h2>
+</div>
+
+<div style="position: absolute; top: 170px; left: 50px; width: 60px; height: 20px; background-color: azure; padding: 30px;">
+	<% if @following === 0 %>
+	<%= form_tag({:controller => "visit", :action => "follow", :id => params[:id]}, :method => "post") do %>
+	<%= submit_tag(:Follow) %>
+	<%end%>
+	<% else %>
+	<%= form_tag({:controller => "visit", :action => "unfollow", :id => params[:id]}, :method => "post") do %>
+	<%= submit_tag(:Unfollow) %>
+	<% end %>
+	<% end %>
+
+</div>
+
+<div style="position: absolute; top: 30px; right: 150px; width: 240px; height: 50px; background-color: azure; padding: 30px;">
+	
+	<%= form_tag({:controller => "welcome", :action => "search"}, :method => "post") do %>
+	<%= text_field_tag(:search) %><br>
+	<%= submit_tag(:Search) %>
+	<%end%>
+</div>
+
+<div style="position: absolute; top: 3px; right: 150px; width: 160px; height: 25px; background-color: azure; padding: 8px;">
+<%= link_to 'Main App', "/" %>
+<%= puts " " %><%= link_to 'Sign Out', "/intro/logout" %>
+</div>
+
+<div style="position: absolute; top: 170px; right: 150px; width: 580px; background-color: azure; padding: 30px;">
+	<h1>Posts</h1>
+	<% @posts.each do |x| %>
+	<div style="background-color: orange; padding: 15px;  margin: 5px;">
+		<h4><%= @u %> | <%= x.created_at %></h4>
+		<p>
+			<%= x.tweet %> 
+		</p>
+	</div>
+	<% end %>
+</div>
+
+</body>

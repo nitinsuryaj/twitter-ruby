@@ -1,0 +1,19 @@
+<body style="background-color:black">
+<div style="position: absolute; top: 30px; left: 50px; width: 140px; height: 50px; background-color: azure; padding-left: 30px; padding:20px;">
+	<h2><%= link_to 'Twitter', :controller => "welcome" %><h2>
+</div>
+<div style="position: absolute; top: 30px; left: 500px; width: 240px; background-color: azure; padding: 30px;">
+<h3>Search Results</h3>
+<% @requser.each do |x| %>
+<% if x.id === session['uid'] %>
+<% else %>
+<%= link_to  "#{x.username}", :controller => "visit", :action => "index", :id => "#{x.id}" %>
+<br>
+<% end %>
+<% end %>
+</div>
+<div style="position: absolute; top: 3px; right: 150px; width: 160px; height: 25px; background-color: azure; padding: 8px;">
+<%= link_to 'Main App', "/" %>
+<%= puts " " %><%= link_to 'Sign Out', "/intro/logout" %>
+</div>
+</body>

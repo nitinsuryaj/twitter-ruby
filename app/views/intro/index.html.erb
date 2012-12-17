@@ -1,0 +1,18 @@
+<body style="background-color:black">
+	<div style="position: absolute; top: 130px; left: 500px; width: 240px; height: 380px; background-color: azure; padding: 30px;">
+	
+	<h1>Login</h1><br>
+	<%= form_tag({:controller => "intro", :action => "verify"}, :method => "post") do %>
+	<h2>Username</h2><%= text_field_tag(:name) %>
+	<h2>Password</h2><%= password_field_tag(:pass) %><br><br>
+	<%= submit_tag(:login) %>
+	<% if params[:paramscheck] == '1' %>
+	<div style="color:red">username or password incorrect</div>
+	<% end %>
+	<%end%>
+	<br>
+	<%= link_to 'Sign Up', :controller => "signup" , :action => "index" %>
+	</div>
+
+</body>
+<h1>Sign In</h1>

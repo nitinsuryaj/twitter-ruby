@@ -1,0 +1,4 @@
+<h1>Welcome Mr. <%= @user.username  %></h1>
+<p><%= link_to 'Twitter', twitter.root_path %></p>
+<p><%= link_to 'Sign Out', :controller => "intro",:action => "logout" %>
+</p>

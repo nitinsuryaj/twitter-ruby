@@ -1,0 +1,17 @@
+<div style="position: absolute; top: 80px; left: 300px; width: 440px; height: 650px; background-color: azure; padding: 30px;">
+	<%= link_to 'Back', :controller => "intro" %>
+	<h2>Sign Up</h2><br>
+	<% if params[:paramscheck] == '1' %>
+	<div style="color:red">all fields are compulsory</div>
+	<% end %>
+	<%= form_tag({:controller => "signup", :action => "save"}, :method => "post") do %>
+	<h3>Fname</h3><%= text_field_tag(:fname) %>
+	<h3>Username</h3><%= text_field_tag(:uname) %><br><br>
+	<h3>Password</h3><%= password_field_tag(:pass) %><br><br>
+	<h3>Email</h3><%= text_field_tag(:email) %><br><br>
+	<h3>Address</h3><%= text_field_tag(:addr) %><br><br>
+	<%= submit_tag(:SignUp) %>
+
+	<%end%>
+	<br><br>
+</div>
