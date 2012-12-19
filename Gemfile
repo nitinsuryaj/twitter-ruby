@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'twitter', :path => "vendor/engines/twitter"
 
+gem 'kaminari'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

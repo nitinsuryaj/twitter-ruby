@@ -7,7 +7,7 @@
 		<div style="padding:4px; float:left; background-color:#3D3B3B; margin-left:300px; margin-top:-8px; border: 1px solid">
 			<h2>Welcome <%= @user.username %><h2>		
 		</div>
-		<div style="background-color:#A4A1A1;border: 1px solid; width:250px; padding:10px 8px 4px 10px; border-radius:12px; float:left; margin-left: 120px; margin-top:1px">
+		<div style="background-color:#A4A1A1;border: 1px solid; width:250px; padding:10px 8px 4px 10px; border-radius:12px; float:left; margin-left: 80px; margin-top:1px">
 			<%= form_tag({:controller => "welcome", :action => "search"}, :method => "post") do %>
 			<%= text_field_tag(:search) %>
 			<%= submit_tag(:Search) %>
@@ -19,6 +19,7 @@
 		</div>
 		<div style="margin-top:10px;margin-right:20px;padding:0px 10px 0px 10px; border-radius:12px; float:right;">
 			<%= puts " " %><%= link_to 'Sign Out', "/intro/logout", :class => 'l' %> 
+			<%= link_to 'My Profile', {:controller=> "myprofile", :action => "index"} , :class => 'l' %> 
 		<%= link_to 'Main App', "/", :class => 'l' %>
 		</div>
 
@@ -47,7 +48,7 @@
 				</h4>
 				<h4 style="float:right"><%= x.created_at %></h4>
 				<% if x.uid == session['uid'] %>
-				<h4 style="float:right; margin-right:5px;"><%= link_to  "Delete", :controller => "welcome", :action => "delete", :pid => "#{x.id}" %></h4><br><br>
+				<h4 style="float:right; margin-right:5px;"><%= link_to  "Delete", :controller => "welcome", :action => "delete", :pid => "#{x.id}" %></h4>
 				<% else %>
 				<h4 style="float:right; margin-right:5px;"><%= link_to  "Retweet", :controller => "welcome", :action => "retweet", :pid => "#{x.id}" %></h4>
 				<% end %><br><br>
