@@ -1,0 +1,56 @@
+<body style="background-color:black">
+	<div style="background:orange; ">
+<div style="position: absolute; top: 30px; left: 50px; width: 140px; height: 50px; background-color: azure; padding-left: 30px; padding:20px;">
+	<h2><%= link_to 'Twitter', :controller => "welcome" %><h2>
+</div>
+<div style="position: absolute; top: 30px; left: 500px; width: 240px; height: 50px; background-color: azure; padding: 30px;">
+	<h2>Welcome <%= @user.username %><h2>
+</div>
+
+<div style="position: absolute; top: 170px; left: 50px; width: 340px; background-color: azure; padding: 30px;">
+	
+	<%= form_tag({:controller => "welcome", :action => "tweet"}, :method => "post") do %>
+	<h2>Message</h2>
+	<% if params[:tweetcheck] == '1' %>
+	<div style="color:red">empty tweets not allowed</div><br>
+	<% end %>
+	<%= text_area_tag(:tweet) %><br>
+	<%= submit_tag(:Tweet) %>
+	<%end%>
+</div>
+
+<div style="position: absolute; top: 30px; right: 150px; width: 200px; height: 50px; background-color: azure; padding: 30px; border-radius:12px;">
+	<%= form_tag({:controller => "welcome", :action => "search"}, :method => "post") do %>
+	<%= text_field_tag(:search) %><br>
+	<%= submit_tag(:Search) %>
+	<% if params[:searchcheck] == '1' %>
+	<div style="color:red">enter user name</div><br>
+	<% end %>
+	<%end%>	
+</div>
+
+<div style="position: absolute; top: 3px; right: 150px; width: 160px; height: 25px; background-color: azure; padding: 8px;">
+<%= link_to 'Main App', "/" %>
+<%= puts " " %><%= link_to 'Sign Out', "/intro/logout" %>
+</div>
+
+<div style="position: absolute; top: 170px; right: 150px; width: 580px; background-color: azure; padding: 30px;
+border-radius:12px;">
+	<h1>Posts</h1>
+	<% @posts.each do |x| %>
+	<div style="background-color: orange; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; margin-bottom:10px; border-radius:12px">
+		<h4>
+			<%= @subidu.each do |y| %>
+			<% @name=y[1]
+				break if y[0]===x.uid	%>		
+			<% end %>
+			<%= @name %> | <%= x.created_at %>
+		</h4>
+		<p>
+			<%= x.tweet %>
+		</p>
+	</div>
+	<% end %>
+</div>
+</div>
+</body>
