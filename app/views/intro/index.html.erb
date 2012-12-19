@@ -1,11 +1,70 @@
+<style type="text/css">
+a:hover { text-decoration:none;
+text-shadow: 0 0 2px #999;
+ border-color: #000;
+ background: #f4f0f0;
+}
+a {
+	text-decoration: none;
+display: inline-block;
+	  min-width: 46px;
+	  text-align: center;
+	  color: #000;
+	  font-size: 12px;
+	  font-weight: bold;
+	  height: 27px;
+	  padding: 0 8px;
+	  line-height: 27px;
+	  -webkit-border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  border-radius: 2px;
+	  -webkit-transition: all 0.218s;
+	  -moz-transition: all 0.218s;
+	  -ms-transition: all 0.218s;
+	  -o-transition: all 0.218s;
+	  transition: all 0.218s;
+	  border: 1px solid #dcdcdc;
+	  background-color: #f5f5f5;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  user-select: none;
+	  cursor: default;
+}
+
+input[type="submit"]{
+	  display: inline-block;
+	  min-width: 46px;
+	  text-align: center;
+	  color: #000;
+	  font-size: 11px;
+	  font-weight: bold;
+	  height: 27px;
+	  padding: 0 8px;
+	  line-height: 27px;
+	  -webkit-border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  border-radius: 2px;
+	  -webkit-transition: all 0.218s;
+	  -moz-transition: all 0.218s;
+	  -ms-transition: all 0.218s;
+	  -o-transition: all 0.218s;
+	  transition: all 0.218s;
+	  border: 1px solid #dcdcdc;
+	  background-color: #f5f5f5;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  user-select: none;
+	  cursor: default;
+	}
+</style>
 <body style="background-color:black">
-	<div style="position: absolute; top: 130px; left: 500px; width: 240px; height: 380px; background-color: azure; padding: 30px;">
+	<div style="position: absolute; top: 130px; left: 500px; width: 240px; height: 380px; background-color:#A4A1A1; padding: 30px; border-radius:12px; border: 3px solid">
 	
 	<h1>Login</h1><br>
 	<%= form_tag({:controller => "intro", :action => "verify"}, :method => "post") do %>
 	<h2>Username</h2><%= text_field_tag(:name) %>
 	<h2>Password</h2><%= password_field_tag(:pass) %><br><br>
-	<%= submit_tag(:login) %>
+	<%= submit_tag(:Login) %>
 	<% if params[:paramscheck] == '1' %>
 	<div style="color:red">username or password incorrect</div>
 	<% end %>

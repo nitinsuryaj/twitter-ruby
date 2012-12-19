@@ -11,3 +11,105 @@
  *= require_self
  *= require_tree .
  */
+<style type="text/css">
+.l:hover { text-decoration:none;
+text-shadow: 0 0 2px #999;
+ border-color: #000;
+ background: #f4f0f0;
+}
+.nd {
+	text-decoration: none;
+	color: #000;
+	height:30px;
+	width:20px;
+}
+.l {
+	float:right;
+	text-decoration: none;
+display: inline-block;
+	  min-width: 46px;
+	  text-align: center;
+	  color: #000;
+	  font-size: 12px;
+	  font-weight: bold;
+	  height: 27px;
+	  padding: 0 8px;
+	  line-height: 27px;
+	  -webkit-border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  border-radius: 2px;
+	  -webkit-transition: all 0.218s;
+	  -moz-transition: all 0.218s;
+	  -ms-transition: all 0.218s;
+	  -o-transition: all 0.218s;
+	  transition: all 0.218s;
+	  border: 1px solid #dcdcdc;
+	  background-color: #f5f5f5;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  user-select: none;
+	  cursor: default;
+}
+
+input[id="search"]{
+	display: inline-block;
+  height: 29px;
+  margin-bottom: 3px;
+  padding: 0 8px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+
+#search{
+	float:left;
+}
+input[name="commit"]{
+	float:right;
+}
+
+#tweet{
+	width: 248px;
+	height: 80px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	border: 1px solid;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-color: #B0A7A8
+}
+input[type="submit"]{
+	  display: inline-block;
+	  min-width: 46px;
+	  text-align: center;
+	  color: #000;
+	  font-size: 11px;
+	  font-weight: bold;
+	  height: 27px;
+	  padding: 0 8px;
+	  line-height: 27px;
+	  -webkit-border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  border-radius: 2px;
+	  -webkit-transition: all 0.218s;
+	  -moz-transition: all 0.218s;
+	  -ms-transition: all 0.218s;
+	  -o-transition: all 0.218s;
+	  transition: all 0.218s;
+	  border: 1px solid #dcdcdc;
+	  background-color: #f5f5f5;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  user-select: none;
+	  cursor: default;
+	  float:right;
+	}
+</style>

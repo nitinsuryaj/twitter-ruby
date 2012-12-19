@@ -1,8 +1,12 @@
-<div style="position: absolute; top: 80px; left: 300px; width: 440px; height: 650px; background-color: azure; padding: 30px;">
+<body style="background-color:black">
+	<div style="position: absolute; top: 80px; left: 400px; width: 340px; height: 650px; background-color:#A4A1A1; padding: 30px; border-radius:12px; border: 3px solid">
 	<%= link_to 'Back', :controller => "intro" %>
 	<h2>Sign Up</h2><br>
 	<% if params[:paramscheck] == '1' %>
 	<div style="color:red">all fields are compulsory</div>
+	<% end %>
+	<% if params[:unamecheck] == '1' %>
+	<div style="color:red">username already exists</div>
 	<% end %>
 	<%= form_tag({:controller => "signup", :action => "save"}, :method => "post") do %>
 	<h3>Fname</h3><%= text_field_tag(:fname) %>
@@ -11,7 +15,7 @@
 	<h3>Email</h3><%= text_field_tag(:email) %><br><br>
 	<h3>Address</h3><%= text_field_tag(:addr) %><br><br>
 	<%= submit_tag(:SignUp) %>
-
 	<%end%>
 	<br><br>
 </div>
+</body>

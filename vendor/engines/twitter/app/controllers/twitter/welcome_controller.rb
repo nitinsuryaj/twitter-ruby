@@ -27,7 +27,7 @@ module Twitter
       @i=@i+1
     end
 
-  	@posts=Tweet.select('uid,tweet,created_at').where(:uid=>subid).order("created_at DESC")
+  	@posts=Tweet.select('id,uid,tweet,created_at').where(:uid=>subid).order("created_at DESC")
   	end
     end
 
@@ -49,6 +49,21 @@ module Twitter
         redirect_to :controller=>"welcome", :searchcheck => "1"
       end
     	@requser=User.select('id,username').where("username LIKE '%#{params[:search]}%'")
+    end
+
+    def delete
+      Tweet.where(:id=>params["pid"]).first().destroy()
+      redirect_to :controller => "welcome"
+    end
+
+    def retweet
+      @pre=Tweet.select('tweet').where(:id=>params["pid"]).first().destroy()
+      @pr=Tweet.create(:uid=>session['uid'],:tweet=>@pre.tweet)
+      if @pr.errors.messages.any?
+        redirect_to :controller=>"welcome", :tweetcheck => "1"
+      else
+        redirect_to :controller=>"welcome"
+      end
     end
   end
 end

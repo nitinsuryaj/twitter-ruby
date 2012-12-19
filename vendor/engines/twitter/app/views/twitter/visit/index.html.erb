@@ -1,47 +1,51 @@
-<body style="background-color:black">
-<div style="position: absolute; top: 30px; left: 50px; width: 140px; height: 50px; background-color: azure; padding-left: 30px; padding:20px;">
-	<h2><%= link_to 'Twitter', :controller => "welcome",:action => "index" %><h2>
-</div>
-<div style="position: absolute; top: 30px; left: 500px; width: 240px; height: 50px; background-color: azure; padding: 30px;">
-	<h2><%= @u %><h2>
-</div>
+<body style="background-color:black; height:auto">
+	<div style=" top: 3px;width: 90%; height: 59px; background-color: #515052;border: 1px solid; padding: 8px; margin:0 auto">
+		<div style="margin-top:-13px; padding:0px 10px 0px 10px; border-radius:12px; float:left;">
+			<h2><%= link_to image_tag('twitter\twitter3.jpg', :height =>"85%"), {:controller => "welcome"}, :class=>'nd' %><h2>
+		</div>
+		<div style="padding:4px; float:left; background-color:#3D3B3B; margin-left:300px; margin-top:-8px; border: 1px solid">
+			<h2><%= @u %><h2>		
+		</div>
+		<div style="background-color:#A4A1A1;border: 1px solid; width:250px; padding:10px 8px 4px 10px; border-radius:12px; float:left; margin-left: 120px; margin-top:1px">
+			<%= form_tag({:controller => "welcome", :action => "search"}, :method => "post") do %>
+			<%= text_field_tag(:search) %>
+			<%= submit_tag(:Search) %>
+			<% if params[:searchcheck] == '1' %>
+			<br>
+			<div style="color:#FC2942; float:left">enter user name</div>
+			<% end %>
+			<%end%>	
+		</div>
+		<div style="margin-top:10px;margin-right:20px;padding:0px 10px 0px 10px; border-radius:12px; float:right;">
+			<%= puts " " %><%= link_to 'Sign Out', "/intro/logout", :class => 'l' %> 
+		<%= link_to 'Main App', "/", :class => 'l' %>
+		</div>
 
-<div style="position: absolute; top: 170px; left: 50px; width: 60px; height: 20px; background-color: azure; padding: 30px;">
-	<% if @following === 0 %>
-	<%= form_tag({:controller => "visit", :action => "follow", :id => params[:id]}, :method => "post") do %>
-	<%= submit_tag(:Follow) %>
-	<%end%>
-	<% else %>
-	<%= form_tag({:controller => "visit", :action => "unfollow", :id => params[:id]}, :method => "post") do %>
-	<%= submit_tag(:Unfollow) %>
-	<% end %>
-	<% end %>
-
-</div>
-
-<div style="position: absolute; top: 30px; right: 150px; width: 240px; height: 50px; background-color: azure; padding: 30px;">
-	
-	<%= form_tag({:controller => "welcome", :action => "search"}, :method => "post") do %>
-	<%= text_field_tag(:search) %><br>
-	<%= submit_tag(:Search) %>
-	<%end%>
-</div>
-
-<div style="position: absolute; top: 3px; right: 150px; width: 160px; height: 25px; background-color: azure; padding: 8px;">
-<%= link_to 'Main App', "/" %>
-<%= puts " " %><%= link_to 'Sign Out', "/intro/logout" %>
-</div>
-
-<div style="position: absolute; top: 170px; right: 150px; width: 580px; background-color: azure; padding: 30px;">
-	<h1>Posts</h1>
-	<% @posts.each do |x| %>
-	<div style="background-color: orange; padding: 15px;  margin: 5px;">
-		<h4><%= @u %> | <%= x.created_at %></h4>
-		<p>
-			<%= x.tweet %> 
-		</p>
 	</div>
-	<% end %>
-</div>
 
+<div style="background-color:#3D3B3B; padding: 20px;width=auto; margin-left:150px; margin-right:auto; position:absolute; float:left"> 
+		<div style="margin-top:0px;border: 1px solid; width: 65px; background-color: #A4A1A1;border-radius:12px; padding:20px 16px 20px 16px; float:left;">
+			<% if @following === 0 %>
+			<%= form_tag({:controller => "visit", :action => "follow", :id => params[:id]}, :method => "post") do %>
+			<%= submit_tag(:Follow) %>
+			<%end%>
+			<% else %>
+			<%= form_tag({:controller => "visit", :action => "unfollow", :id => params[:id]}, :method => "post") do %>
+			<%= submit_tag(:Unfollow) %>
+			<% end %>
+			<% end %>
+		</div>
+		<div style="width: 690px; margin-left:10px; background-color: #A4A1A1; padding-top: 10px; border-radius:12px; float:right;">
+			<h1 style="margin-left:30px">Posts</h1>
+			<% @posts.each do |x| %>
+			<div style="border-top:1px solid; border-bottom:1px solid;border-left:2px solid;background-color:#A4A1A1;padding-left:20px; padding-right:20px; padding-top:5px; padding-bottom:5px; margin:2px; border-radius:8px;">
+				<h4><%= @u %> | <%= x.created_at %></h4>
+				<p>
+					<%= x.tweet %> 
+				</p>
+			</div>
+			<% end %>
+		</div>
+		</div>
+	</div>
 </body>
