@@ -1,3 +1,65 @@
 // Place all the styles related to the intro controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login{
+	position: absolute; top: 130px; left: 500px; width: 240px; height: 380px; background-color:#A4A1A1; padding: 30px; border-radius:12px; border: 3px solid;
+}
+
+a:hover { text-decoration:none;
+text-shadow: 0 0 2px #999;
+ border-color: #000;
+ background: #f4f0f0;
+}
+a {
+	text-decoration: none;
+display: inline-block;
+	  min-width: 46px;
+	  text-align: center;
+	  color: #000;
+	  font-size: 12px;
+	  font-weight: bold;
+	  height: 27px;
+	  padding: 0 8px;
+	  line-height: 27px;
+	  -webkit-border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  border-radius: 2px;
+	  -webkit-transition: all 0.218s;
+	  -moz-transition: all 0.218s;
+	  -ms-transition: all 0.218s;
+	  -o-transition: all 0.218s;
+	  transition: all 0.218s;
+	  border: 1px solid #dcdcdc;
+	  background-color: #f5f5f5;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  user-select: none;
+	  cursor: default;
+}
+
+input[type="submit"]{
+	  display: inline-block;
+	  min-width: 46px;
+	  text-align: center;
+	  color: #000;
+	  font-size: 11px;
+	  font-weight: bold;
+	  height: 27px;
+	  padding: 0 8px;
+	  line-height: 27px;
+	  -webkit-border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  border-radius: 2px;
+	  -webkit-transition: all 0.218s;
+	  -moz-transition: all 0.218s;
+	  -ms-transition: all 0.218s;
+	  -o-transition: all 0.218s;
+	  transition: all 0.218s;
+	  border: 1px solid #dcdcdc;
+	  background-color: #f5f5f5;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  user-select: none;
+	  cursor: default;
+	}

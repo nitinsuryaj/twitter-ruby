@@ -27,19 +27,18 @@ module Twitter
       @i=@i+1
     end
 
-  	@posts=Tweet.select('id,uid,tweet,created_at').where(:uid=>subid).order("created_at DESC")
-    @psize=@posts.size
+  	@pos=Tweet.select('id').where(:uid=>subid).order("created_at DESC")
+    @psize=@pos.size
     @pages=@psize/10+1
     if params[:page].nil?
       params[:page]=1
     end
     params[:page]=params[:page].to_i
-    @max=params[:page]*10 - 1
-    @min=@max-9
-
-    if @max>=@psize
-      @max=@psize-1
-    end
+    ofst=(params[:page]-1)*10
+    @posts=Tweet.select('id,uid,tweet,created_at').where(:uid=>subid).order("created_at DESC").limit(10).offset(ofst)
+    @max=@posts.size-1
+    @min=0
+    
     @paginid=1
   	end
 

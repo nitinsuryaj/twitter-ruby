@@ -2,3 +2,21 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+<style type="text/css">
+
+.topdiv{
+	 top: 3px;width: 90%; height: 59px; background-color: #515052;border: 1px solid; padding: 8px; margin:0 auto;
+}
+
+.imagediv{
+	margin-top:-13px; padding:0px 10px 0px 10px; border-radius:12px; float:left;
+}
+
+.contentdiv{
+	background-color:#3D3B3B; padding: 20px;width=auto; margin-left:150px; margin-right:auto; position:absolute
+}
+
+.incontentdiv{
+	width: 690px; margin-left:10px; background-color: #A4A1A1; padding: 40px; border-radius:12px; float:right;
+}
+</style>

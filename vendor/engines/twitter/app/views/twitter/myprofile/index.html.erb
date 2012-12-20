@@ -1,12 +1,12 @@
-<body style="background-color:black; height:auto">
-	<div style=" top: 3px;width: 90%; height: 59px; background-color: #515052;border: 1px solid; padding: 8px; margin:0 auto">
-		<div style="margin-top:-13px; padding:0px 10px 0px 10px; border-radius:12px; float:left;">
+<body>
+	<div class="topdiv">
+		<div class="imagediv">
 			<h2><%= link_to image_tag('twitter\twitter3.jpg', :height =>"85%"), {:controller => "welcome"}, :class=>'nd' %><h2>
 		</div>
-		<div style="padding:4px; float:left; background-color:#3D3B3B; margin-left:300px; margin-top:-8px; border: 1px solid">
+		<div class="userdiv">
 			<h2><%= @user.username %><h2>		
 		</div>
-		<div style="background-color:#A4A1A1;border: 1px solid; width:250px; padding:10px 8px 4px 10px; border-radius:12px; float:left; margin-left: 120px; margin-top:1px">
+		<div class="searchdiv">
 			<%= form_tag({:controller => "welcome", :action => "search"}, :method => "post") do %>
 			<%= text_field_tag(:search) %>
 			<%= submit_tag(:Search) %>
@@ -16,18 +16,20 @@
 			<% end %>
 			<%end%>	
 		</div>
-		<div style="margin-top:10px;margin-right:20px;padding:0px 10px 0px 10px; border-radius:12px; float:right;">
+		<div class="logoutdiv">
 			<%= puts " " %><%= link_to 'Sign Out', "/intro/logout", :class => 'l' %> 
 		<%= link_to 'Main App', "/", :class => 'l' %>
 		</div>
 
 	</div>
-	<div style="background-color:#3D3B3B; padding: 20px;width=auto; margin-left:150px; margin-right:auto; position:absolute"> 
-		<div style="width: 690px; margin-left:10px; background-color: #A4A1A1; padding: 40px; border-radius:12px; float:right;">
-			<h3 style="width:100px;display:inline">First Name: </h3><%= @detail.fname %><br>
-			<h3 style="width:100px;display:inline">Username: </h3><%= @user.username %><br>
-			<h3 style="width:100px;display:inline">Email: </h3><%= @detail.email %><br>
-			<h3 style="width:100px;display:inline">Address: </h3><%= @detail.address %><br>
+	<div class="contentdiv"> 
+		<div class="incontentdiv">
+			
+			<h3 style="display:inline">First Name: </h3><%= @detail.fname %><br>
+			<h3 style="display:inline">Username: </h3><%= @user.username %><br>
+			<h3 style="display:inline">Email: </h3><%= @detail.email %><br>
+			<h3 style="display:inline">Address: </h3><%= @detail.address %><br>
+
 			<%= link_to 'Delete profile', :controller => "myprofile", :action => "delete" , :uid => "#{@user.id}" %>
 		</div>
 		</div>

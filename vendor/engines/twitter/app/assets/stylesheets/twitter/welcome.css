@@ -2,3 +2,29 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+<style type="text/css">
+
+.twediv{
+	margin-top:0px;border: 1px solid; width: 270px; background-color: #A4A1A1;border-radius:12px; padding:0px 20px 6px 20px; float:left;
+}
+
+.topdiv{
+	 top: 3px;width: 90%; height: 59px; background-color: #515052;border: 1px solid; padding: 8px; margin:0 auto;
+}
+
+body{
+	 background-color:black; height:auto;
+}
+
+.searchdiv{
+	background-color:#A4A1A1;border: 1px solid; width:250px; padding:10px 8px 4px 10px; border-radius:12px; float:left; margin-left: 100px; margin-top:1px;
+}
+.searchresdiv{
+	background-color:#3D3B3B; padding: 20px;width=auto; margin-left:250px; margin-right:auto; position:absolute;
+}
+
+.insearchres{
+	width: 690px; margin-left:10px; background-color: #6C6B70; padding: 20px; border-radius:12px;
+}
+
+</style>

@@ -1,73 +1,11 @@
-<style type="text/css">
-.l:hover { text-decoration:none;
-text-shadow: 0 0 2px #999;
- border-color: #000;
- background: #f4f0f0;
-}
-.user {
-	text-decoration: none;
-}
-.l {
-	text-decoration: none;
-display: inline-block;
-	  min-width: 46px;
-	  text-align: center;
-	  color: #000;
-	  font-size: 12px;
-	  font-weight: bold;
-	  height: 27px;
-	  padding: 0 8px;
-	  line-height: 27px;
-	  -webkit-border-radius: 2px;
-	  -moz-border-radius: 2px;
-	  border-radius: 2px;
-	  -webkit-transition: all 0.218s;
-	  -moz-transition: all 0.218s;
-	  -ms-transition: all 0.218s;
-	  -o-transition: all 0.218s;
-	  transition: all 0.218s;
-	  border: 1px solid #dcdcdc;
-	  background-color: #f5f5f5;
-	  -webkit-user-select: none;
-	  -moz-user-select: none;
-	  user-select: none;
-	  cursor: default;
-}
+	<body>
 
-input[type="submit"]{
-	  display: inline-block;
-	  min-width: 46px;
-	  text-align: center;
-	  color: #000;
-	  font-size: 11px;
-	  font-weight: bold;
-	  height: 27px;
-	  padding: 0 8px;
-	  line-height: 27px;
-	  -webkit-border-radius: 2px;
-	  -moz-border-radius: 2px;
-	  border-radius: 2px;
-	  -webkit-transition: all 0.218s;
-	  -moz-transition: all 0.218s;
-	  -ms-transition: all 0.218s;
-	  -o-transition: all 0.218s;
-	  transition: all 0.218s;
-	  border: 1px solid #dcdcdc;
-	  background-color: #f5f5f5;
-	  -webkit-user-select: none;
-	  -moz-user-select: none;
-	  user-select: none;
-	  cursor: default;
-	}
-</style>
-
-	<body style="background-color:black; height:auto">
-
-	<div style=" top: 3px;width: 90%; height: 59px; background-color: #515052;border: 1px solid; padding: 8px; margin:0 auto">
-		<div style="margin-top:-13px; padding:0px 10px 0px 10px; border-radius:12px; float:left;">
+	<div class="topdiv">
+		<div class="imagediv">
 			<h2><%= link_to image_tag('twitter\twitter3.jpg', :height =>"85%"), {:controller => "welcome"}, :class=>'nd' %><h2>
 		</div>
-		<div style="background-color:#A4A1A1;border: 1px solid; width:250px; padding:10px 8px 4px 10px; border-radius:12px; float:left; margin-left: 300px; margin-top:1px">
+		<div class="searchdiv">
+
 			<%= form_tag({:controller => "welcome", :action => "search"}, :method => "post") do %>
 			<%= text_field_tag(:search) %>
 			<%= submit_tag(:Search) %>
@@ -77,16 +15,18 @@ input[type="submit"]{
 			<% end %>
 			<%end%>	
 		</div>
-		<div style="margin-top:10px;margin-right:20px;padding:0px 10px 0px 10px; border-radius:12px; float:right;">
+		<div class="logoutdiv">
 			<%= puts " " %><%= link_to 'Sign Out', "/intro/logout", :class => 'l' %> 
 		<%= link_to 'Main App', "/", :class => 'l' %>
 		</div>
-
 	</div>
-	<div style="background-color:#3D3B3B; padding: 20px;width=auto; margin-left:250px; margin-right:auto; position:absolute"> 
-		<div style="width: 690px; margin-left:10px; background-color: #6C6B70; padding: 20px; border-radius:12px;">
+
+	<div class="searchresdiv"> 
+		<div class="insearchres">
 			<h1 style="margin-left:30px">Search Results</h1>
+
 			<div style="margin-left:30px; margin-bottom:2px;">
+
 			<% @count=0 %>
 			<% @requser.each do |x| %>
 			<% if x.id === session['uid'] %>

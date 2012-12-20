@@ -12,10 +12,51 @@
  *= require_tree .
  */
 <style type="text/css">
+
+.twediv{
+	margin-top:0px;border: 1px solid; width: 270px; background-color: #A4A1A1;border-radius:12px; padding:0px 20px 6px 20px; float:left;
+}
+
+.postdiv{
+	width: 690px; margin-left:10px; background-color: #A4A1A1; padding-top: 10px; border-radius:12px; float:right;
+}
+
+.searchdiv{
+	background-color:#A4A1A1;border: 1px solid; width:250px; padding:10px 8px 4px 10px; border-radius:12px; float:left; margin-left: 60px; margin-top:1px;
+}
+
+.logoutdiv{
+	margin-top:10px;margin-right:20px;padding:0px 10px 0px 10px; border-radius:12px; float:right;
+}
+
+.imagediv{
+	margin-top:-13px; padding:0px 10px 0px 10px; border-radius:12px; float:left;
+}
+
+.post{
+	border-top:1px solid; border-bottom:1px solid;border-left:2px solid;background-color:#A4A1A1;padding-left:20px; padding-right:20px; padding-top:5px; padding-bottom:5px; margin:2px; border-radius:8px;
+}
+
+.userdiv{
+	padding:4px; float:left; background-color:#3D3B3B; margin-left:300px; margin-top:-8px; border: 1px solid;
+}
+
+body{
+	 background-color:black; height:auto;
+}
+
+.topdiv{
+	 top: 3px;width: 90%; height: 59px; background-color: #515052;border: 1px solid; padding: 8px; margin:0 auto;
+}
+
 .l:hover { text-decoration:none;
 text-shadow: 0 0 2px #999;
  border-color: #000;
  background: #f4f0f0;
+}
+.user{
+	text-decoration: none;
+	height:40px;
 }
 .nd {
 	text-decoration: none;

@@ -2,3 +2,22 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+<style type="text/css">
+
+.topdiv{
+	 top: 3px;width: 90%; height: 59px; background-color: #515052;border: 1px solid; padding: 8px; margin:0 auto;
+}
+
+.visithome{
+	background-color:#3D3B3B; padding: 20px;width=auto; margin-left:150px; margin-right:auto; position:absolute; float:left;
+}
+
+.followdiv{
+	margin-top:0px;border: 1px solid; width: 65px; background-color: #A4A1A1;border-radius:12px; padding:20px 16px 20px 16px; float:left;
+}
+
+.postdiv{
+	width: 690px; margin-left:10px; background-color: #A4A1A1; padding-top: 10px; border-radius:12px; float:right;
+}
+
+</style>
