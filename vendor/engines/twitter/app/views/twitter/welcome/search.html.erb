@@ -4,7 +4,7 @@ text-shadow: 0 0 2px #999;
  border-color: #000;
  background: #f4f0f0;
 }
-.nd {
+.user {
 	text-decoration: none;
 }
 .l {
@@ -84,7 +84,7 @@ input[type="submit"]{
 
 	</div>
 	<div style="background-color:#3D3B3B; padding: 20px;width=auto; margin-left:250px; margin-right:auto; position:absolute"> 
-		<div style="width: 690px; margin-left:10px; background-color: #6C6B70; padding: 10px; border-radius:12px;">
+		<div style="width: 690px; margin-left:10px; background-color: #6C6B70; padding: 20px; border-radius:12px;">
 			<h1 style="margin-left:30px">Search Results</h1>
 			<div style="margin-left:30px; margin-bottom:2px;">
 			<% @count=0 %>
@@ -92,7 +92,7 @@ input[type="submit"]{
 			<% if x.id === session['uid'] %>
 			<% else %>
 			<% @count=@count+1 %>
-			<%= link_to  "#{x.username}", :controller => "visit", :action => "index", :id => "#{x.id}" %>
+			<%= link_to  "#{x.username}", {:controller => "visit", :action => "index", :id => "#{x.id}"}, :class =>"user" %>
 			<br>
 			<% end %>
 			<% end %>

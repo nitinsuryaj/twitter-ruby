@@ -37,26 +37,33 @@
 		</div>
 		<div style="width: 690px; margin-left:10px; background-color: #A4A1A1; padding-top: 10px; border-radius:12px; float:right;">
 			<h1 style="margin-left:30px">Posts</h1>
-			<% @posts.each do |x| %>
+			<% while @min <= @max %>
 			<div style="border-top:1px solid; border-bottom:1px solid;border-left:2px solid;background-color:#A4A1A1;padding-left:20px; padding-right:20px; padding-top:5px; padding-bottom:5px; margin:2px; border-radius:8px;">
 					<%= @subidu.each do |y| %>
 					<% @name=y[1]
-						break if y[0]===x.uid	%>		
+						break if y[0]===@posts[@min].uid	%>		
 					<% end %>
 				<h4 style="float:left">
 					<%= @name %> 
 				</h4>
-				<h4 style="float:right"><%= x.created_at %></h4>
-				<% if x.uid == session['uid'] %>
-				<h4 style="float:right; margin-right:5px;"><%= link_to  "Delete", :controller => "welcome", :action => "delete", :pid => "#{x.id}" %></h4>
+				<h4 style="float:right"><%= @posts[@min].created_at %></h4>
+				<% if @posts[@min].uid == session['uid'] %>
+				<h4 style="float:right; margin-right:5px;"><%= link_to  "Delete", :controller => "welcome", :action => "delete", :pid => "#{@posts[@min].id}" %></h4>
 				<% else %>
-				<h4 style="float:right; margin-right:5px;"><%= link_to  "Retweet", :controller => "welcome", :action => "retweet", :pid => "#{x.id}" %></h4>
+				<h4 style="float:right; margin-right:5px;"><%= link_to  "Retweet", :controller => "welcome", :action => "retweet", :pid => "#{@posts[@min].id}" %></h4>
 				<% end %><br><br>
 				<p>
-					<%= x.tweet %>
+					<%= @posts[@min].tweet %>
 				</p>
 			</div>
+			<% @min=@min+1 %>
 			<% end %>
+			<div style="padding:10px; text-align:center ;margin: 0 auto">
+			<% while @paginid <= @pages %>
+				<%= link_to  "#{@paginid}", :controller => "welcome", :action => "index", :page => "#{@paginid}" %>
+				<% @paginid=@paginid+1 %>
+			<% end %>
+			</div>
 		</div>
 		</div>
 	</div>
